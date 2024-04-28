@@ -1,25 +1,38 @@
-import logo from '../../logo.svg';
+import logo from '../../images/LogoCaixa.svg'
 import './App.css';
+import { PrimaryDiv, PrimaryHeader } from './style';
+import React, { useState } from 'react';
 
-function App() {
+//Componentes
+import TextInput from '../../components/TextInput';
+import PrimaryButton from '../../components/Button';
+
+function HomePage() {
+
+   //States
+   const [login, setLogin] = useState('');
+   const [password, setPassword] = useState('');
+
+   //Mudando o dado no input do email
+   const handleChangeEmail = (event) => {
+       setLogin(event.target.value);
+   }
+
+   //Mudando o dado no input da Senha
+   const handleChangePassword = (event) => {
+    setPassword(event.target.value);
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
+    <PrimaryDiv>
+      <PrimaryHeader>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <TextInput tipo="email" value={login} onChange={handleChangeEmail} placeholder="Insira seu email"/>
+        <TextInput tipo="password" value={password} onChange={handleChangePassword} placeholder="Insira sua senha"/>
+        <PrimaryButton text="Pressione"/>
+      </PrimaryHeader>
+    </PrimaryDiv>
   );
 }
 
-export default App;
+export default HomePage;
