@@ -2,12 +2,21 @@ import logo from '../../images/LogoCaixa.svg'
 import './App.css';
 import { PrimaryDiv, PrimaryHeader } from './style';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //Componentes
 import TextInput from '../../components/TextInput';
 import PrimaryButton from '../../components/Button';
 
 function HomePage() {
+
+  //navigate
+  const navigate = useNavigate();
+
+  //Rota para ir para o jogo
+  const goToGame = () => {
+    navigate('/game');
+  };
 
    //States
    const [login, setLogin] = useState('');
@@ -29,7 +38,7 @@ function HomePage() {
         <img src={logo} className="App-logo" alt="logo" />
         <TextInput tipo="email" value={login} onChange={handleChangeEmail} placeholder="Insira seu email"/>
         <TextInput tipo="password" value={password} onChange={handleChangePassword} placeholder="Insira sua senha"/>
-        <PrimaryButton text="Pressione"/>
+        <PrimaryButton text="Pressione" onClick={goToGame}/>
       </PrimaryHeader>
     </PrimaryDiv>
   );
