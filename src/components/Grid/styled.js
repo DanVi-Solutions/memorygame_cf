@@ -9,6 +9,6 @@ export const Gride = styled.div`
     gap: 0.2rem;
 `
 
-export const TextinhuBonitinhu = styled.text`
+export const Texto = styled.text`
     padding: 2rem 0;
 `

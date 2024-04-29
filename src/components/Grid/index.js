@@ -1,4 +1,4 @@
-import { Gride, TextinhuBonitinhu } from "./styled";
+import { Gride, Texto } from "./styled";
 import Card from "../Card";
 import { useRef, useState } from "react";
 import { duplicateRegenerateSortArray } from '../../utils/card_utils'
@@ -62,10 +62,10 @@ function Grid( {cards} ) {
 
     return(
         <>
-        <TextinhuBonitinhu>
+        <Texto>
             <h1>Jogo da Memoria</h1>
         <p>Movimentos: {moves} | Acertos: {matches}</p>
-        </TextinhuBonitinhu>
+        </Texto>
             <Gride>
                 {stateCards.map((card) => {
                 return <Card {...card} key={card.id} handleClick={handleClick}/>;
