@@ -3,11 +3,11 @@ import './App.css';
 import { PrimaryDiv, PrimaryHeader } from './style';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+// import { createUser } from '../../services/userServices';
 
 //Componentes
 import TextInput from '../../components/TextInput';
 import PrimaryButton from '../../components/Button';
-import { createUser } from '../../services/userServices';
 
 function HomePage() {
   
@@ -20,7 +20,8 @@ function HomePage() {
 
   //Rota para ir para o jogo
   const goToGame = () => {
-    upUser(login, password);
+    navigate('/game');
+    // upUser(login, password);
   };
 
 
@@ -34,14 +35,14 @@ function HomePage() {
     setPassword(event.target.value);
 }
 
-    async function upUser(data1, data2){
-      try{
-        const response = await createUser(data1, data2);
-        console.log(response);
-      } catch(err){
-        console.log(err);
-      }
-    }
+    // async function upUser(nameData, emailData, preferencesData){
+    //   try{
+    //     const response = await createUser(nameData, emailData, preferencesData);
+    //     console.log(response);
+    //   } catch(err){
+    //     console.log(err);
+    //   }
+    // }
 
   return (
     <PrimaryDiv>
