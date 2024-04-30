@@ -1,8 +1,11 @@
-import logo from '../../images/LogoCaixa.svg'
-import './App.css';
-import { PrimaryDiv, PrimaryHeader } from './style';
+import logo from '../../images/LogoCaixa.svg';
+import capa from '../../images/CapinhaCaixa.png';
+import { Text, Logo, PrimaryDiv, PrimaryHeader, Capa } from './style';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AwesomeButton } from 'react-awesome-button';
+import "react-awesome-button/dist/styles.css"; // Importa os estilos padrão
+import './button.css';
 
 //Componentes
 import TextInput from '../../components/TextInput';
@@ -34,11 +37,15 @@ function HomePage() {
 
   return (
     <PrimaryDiv>
+      <Capa src={capa}/>
       <PrimaryHeader>
-        <img src={logo} className="App-logo" alt="logo" />
-        <TextInput tipo="email" value={login} onChange={handleChangeEmail} placeholder="Insira seu email"/>
-        <TextInput tipo="password" value={password} onChange={handleChangePassword} placeholder="Insira sua senha"/>
-        <PrimaryButton text="Pressione" onClick={goToGame}/>
+        <PrimaryDiv className="conjunto_lado_a_lado">
+          <Logo src={logo} alt="logo" />
+        </PrimaryDiv>
+        <Text>Jogo da <br/> Memoria</Text>
+        {/* <TextInput tipo="email" value={login} onChange={handleChangeEmail} placeholder="Insira seu email"/>
+        <TextInput tipo="password" value={password} onChange={handleChangePassword} placeholder="Insira sua senha"/> */}
+        <AwesomeButton type='primary' onPress={() => goToGame()} style={{ position:'absolute', bottom:'5vmin', width:'90%', height: '20vmin', fontSize:50}} className='aws-btn' size="large">Iniciar jogo</AwesomeButton>
       </PrimaryHeader>
     </PrimaryDiv>
   );

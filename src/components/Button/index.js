@@ -3,7 +3,7 @@ import { Button } from './styled';
 function PrimaryButton(props) {
 
   return (
-    <Button onClick={props.onClick}>
+    <Button className={props.Class} onClick={props.onClick}>
         {props.text}
     </Button>
   );
