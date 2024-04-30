@@ -7,20 +7,22 @@ import { useNavigate } from 'react-router-dom';
 //Componentes
 import TextInput from '../../components/TextInput';
 import PrimaryButton from '../../components/Button';
+import { createUser } from '../../services/userServices';
 
 function HomePage() {
+  
+  //States
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
 
   //navigate
   const navigate = useNavigate();
 
   //Rota para ir para o jogo
   const goToGame = () => {
-    navigate('/game');
+    upUser(login, password);
   };
 
-   //States
-   const [login, setLogin] = useState('');
-   const [password, setPassword] = useState('');
 
    //Mudando o dado no input do email
    const handleChangeEmail = (event) => {
@@ -31,6 +33,15 @@ function HomePage() {
    const handleChangePassword = (event) => {
     setPassword(event.target.value);
 }
+
+    async function upUser(data1, data2){
+      try{
+        const response = await createUser(data1, data2);
+        console.log(response);
+      } catch(err){
+        console.log(err);
+      }
+    }
 
   return (
     <PrimaryDiv>
