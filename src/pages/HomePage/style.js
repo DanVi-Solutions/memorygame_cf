@@ -33,9 +33,9 @@ export const Logo = styled.img`
 `
 
 export const Capa = styled.img`
-    width: 106%;
-    height: 100%;
-    transform: translate( -2%, -10%) rotateZ(-5deg);
+    width: 105%;
+    height: 60vmin;
+    transform: translate( -2%, -15%) rotateZ(-5deg);
 `
 
 export const Text = styled.text`

@@ -45,7 +45,7 @@ function HomePage() {
         <Text>Jogo da <br/> Memoria</Text>
         {/* <TextInput tipo="email" value={login} onChange={handleChangeEmail} placeholder="Insira seu email"/>
         <TextInput tipo="password" value={password} onChange={handleChangePassword} placeholder="Insira sua senha"/> */}
-        <AwesomeButton type='primary' onPress={() => goToGame()} style={{ position:'absolute', bottom:'5vmin', width:'90%', height: '20vmin', fontSize:50}} className='aws-btn' size="large">Iniciar jogo</AwesomeButton>
+        <AwesomeButton type='primary' onPress={() => goToGame()} style={{ position:'absolute', bottom:'5vmin', width:'90%', height: '20vmin', fontSize:'10vmin', display:'flex'}} className='aws-btn' size="large">Iniciar jogo</AwesomeButton>
       </PrimaryHeader>
     </PrimaryDiv>
   );
